@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="2D">
+      <UniqueIdentifier>{d4a91445-7c77-4149-b5b4-5b67c0ed29b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D">
+      <UniqueIdentifier>{17c102f3-4f27-4c2b-842d-2479b05a49e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{0a1a20d1-0aba-4223-8975-5c40897bf40c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D\Header Files">
+      <UniqueIdentifier>{5445b7e0-e440-45e9-8a05-3ec586b305da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="2D\Header Files\Algorithms">
+      <UniqueIdentifier>{f33a5317-28e2-464d-a7ab-db96727ae260}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Header Files">
+      <UniqueIdentifier>{40725d89-f147-4e10-b8b0-7003d4ee54ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Source Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="2D\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="2D\Source Files\Algorithms">
+      <UniqueIdentifier>{c158ba43-3ded-4e16-930d-281a9fb526ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D\Source FIles">
+      <UniqueIdentifier>{a11dc50b-a994-4cc8-9f2e-282f72b8a5cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D\Header Files\Algorithms">
+      <UniqueIdentifier>{076b4109-d3d7-44a6-b261-2f3135fd9d78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D\Source FIles\Algorithms">
+      <UniqueIdentifier>{edf48f65-11f9-486c-8fc3-5c1de083f711}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Metropolis">
+      <UniqueIdentifier>{02e94b80-aabc-40b7-9410-76498a9e542d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gibbs">
+      <UniqueIdentifier>{a6ce6273-ca49-4d48-91b7-473a5f53971c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Swendsen.cpp">
+      <Filter>2D\Source Files\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Output.cpp">
+      <Filter>2D\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomGeneration.cpp">
+      <Filter>Common\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Initialization.cpp">
+      <Filter>Common\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Statistics2D.cpp">
+      <Filter>2D\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Statistics3D.cpp">
+      <Filter>3D\Source FIles</Filter>
+    </ClCompile>
+    <ClCompile Include="Statistics.cpp">
+      <Filter>Common\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Common\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Common\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Metropolis3D.cpp">
+      <Filter>3D\Source FIles\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulation.cpp">
+      <Filter>Common\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering.cpp">
+      <Filter>Common\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Metropolis.cpp">
+      <Filter>Metropolis</Filter>
+    </ClCompile>
+    <ClCompile Include="Metropolis2D.cpp">
+      <Filter>Metropolis</Filter>
+    </ClCompile>
+    <ClCompile Include="Metropolis2DAGG.cpp">
+      <Filter>Metropolis</Filter>
+    </ClCompile>
+    <ClCompile Include="Gibbs2D.cpp">
+      <Filter>Gibbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Gibbs3D.cpp">
+      <Filter>Gibbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Gibbs.cpp">
+      <Filter>Gibbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Mixing2D.cpp">
+      <Filter>2D\Source Files\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="LatticeManipulator.cpp">
+      <Filter>Common\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulator.cpp">
+      <Filter>Common\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Swendsen.h">
+      <Filter>2D\Header Files\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="Coord2D.h">
+      <Filter>2D\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Output.h">
+      <Filter>2D\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="coord3D.h">
+      <Filter>3D\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomGeneration.h">
+      <Filter>Common\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation.h">
+      <Filter>2D\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>Common\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Situation.h">
+      <Filter>Common\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Initialization.h">
+      <Filter>Common\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Statistics2D.h">
+      <Filter>2D\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Statistics3D.h">
+      <Filter>3D\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Statistics.h">
+      <Filter>Common\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Common\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Metropolis3D.h">
+      <Filter>3D\Header Files\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering.h">
+      <Filter>Common\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Metropolis.h">
+      <Filter>Metropolis</Filter>
+    </ClInclude>
+    <ClInclude Include="Metropolis2D.h">
+      <Filter>Metropolis</Filter>
+    </ClInclude>
+    <ClInclude Include="Metropolis2DAGG.h">
+      <Filter>Metropolis</Filter>
+    </ClInclude>
+    <ClInclude Include="Gibbs2D.h">
+      <Filter>Gibbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Gibbs3D.h">
+      <Filter>Gibbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Gibbs.h">
+      <Filter>Gibbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Mixing2D.h">
+      <Filter>2D\Header Files\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="LatticeManipulator.h">
+      <Filter>Common\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulator.h">
+      <Filter>Common\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
