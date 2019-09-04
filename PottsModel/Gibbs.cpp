@@ -38,7 +38,7 @@ uint8_t Gibbs::NewState(vector<double>& probabilities)
 
 void Gibbs::OneStep()
 {
-	for (int i = 0; i < numberOfSites; i++)
+	for (unsigned i = 0; i < numberOfSites; i++)
 	{
 		OneIteration();
 	}

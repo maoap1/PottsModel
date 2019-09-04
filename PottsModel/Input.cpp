@@ -25,32 +25,30 @@ Simulator* algorithm;
 Simulator* burnInAlgorithm;
 
 #ifdef _2D
+Statistics2D statisticsSpecified;
+#endif // _2D
+
+#ifdef _3D
+Statistics3D statisticsSpecified;
+#endif // _3D
+
+// 2D
+
+Swendsen swendsen;
+
 Gibbs2D gibbs4N(4);
 Gibbs2D gibbs8N(8);
 Metropolis2D metropolis4N(4);
 Metropolis2D metropolis8N(8);
 Metropolis2DAGG metropolisAGG4N(4);
 Metropolis2DAGG metropolisAGG8N(8);
-Statistics2D statisticsSpecified;
-#endif // _2D
-
-#ifdef _3D
-Gibbs3D gibbs;
-// Ve 3D jeste neexistuji dalsi moznosti
-// Metropolis 3D je deprecated, nepouzivat pokud mozno
-Metropolis3D metropolis4N;
-Metropolis3D metropolis8N;
-Metropolis3D metropolisAGG4N;
-Metropolis3D metropolisAGG8N;
-// TODO (ty dalsi moznosti metropolise)
-
-Statistics3D statisticsSpecified;
-#endif // _3D
-
-Swendsen swendsen;
-
-Mixing2D mixing4N(4); // POZOR NA NEEXISTENCI 3D VARIANTY
+Mixing2D mixing4N(4);
 Mixing2D mixing8N(8);
+
+// 3D
+Gibbs3D gibbs6N(6);
+Gibbs3D gibbs18N(18);
+Gibbs3D gibbs26N(26);
 
 
 void InitializeSwendsen()
@@ -66,6 +64,21 @@ void InitializeGibbs4N()
 void InitializeGibbs8N()
 {
 	algorithm = &gibbs8N;
+}
+
+void InitializeGibbs6N()
+{
+	algorithm = &gibbs6N;
+}
+
+void InitializeGibbs18N()
+{
+	algorithm = &gibbs18N;
+}
+
+void InitializeGibbs26N()
+{
+	algorithm = &gibbs26N;
 }
 
 void InitializeMetropolis4N()
@@ -113,6 +126,8 @@ void InitializeStatistics()
 	statistics = &statisticsSpecified;
 }
 
+#ifdef _2D
+
 void SelectingGibbs()
 {
 	cout << "Specifikujte jaky Gibbs (1 4Neighbors , 2 8Neighbors):" << endl;
@@ -132,6 +147,32 @@ void SelectingGibbs()
 		break;
 	}
 }
+#endif // _2D
+
+#ifdef _3D
+void SelectingGibbs()
+{
+	cout << "Specifikujte jaky Gibbs (1 6Neighbors , 2 18Neighbors, 3 26Neighbors):" << endl;
+	int type;
+	cin >> type;
+	switch (type)
+	{
+	case 1:
+		InitializeGibbs6N();
+		break;
+	case 2:
+		InitializeGibbs18N();
+		break;
+	case 3:
+		InitializeGibbs26N();
+		break;
+	default:
+		cout << "Zadali jste spatne. Zkuste znovu" << endl;
+		SelectingGibbs();
+		break;
+	}
+}
+#endif // _3D
 
 void SelectingMetropolis()
 {
@@ -188,6 +229,10 @@ void SelectingSwendsen()
 
 void SelectAlgorithm()
 {
+#ifdef _3D
+	cout << "Funkcni ve 3D je pouze Gibbs!!!" << endl;
+#endif // _3D
+
 	cout << "Vyberte algoritmus (1 Gibbs, 2 Metropolis, 3 Mixing, 4 Swendsen-Wang):" << endl;
 
 	int type;
@@ -272,9 +317,18 @@ void InitializeByConsoleFast() // Almost no asking
 	situation.colorFrequenciesSavingInterval = 1;
 	cout << situation.colorFrequenciesSavingInterval << endl;
 
+
+
+
 	cout << "Po kolika iteracich ukladat mrizku: ";
 	//situation.latticeSavingInterval = 1;//1
+#ifdef _2D
 	cin >> situation.latticeSavingInterval;
+#endif // _2D
+
+#ifdef _3D
+	situation.latticeSavingInterval = 0;
+#endif // _3D
 
 	cout << situation.latticeSavingInterval << endl;
 
@@ -313,11 +367,17 @@ void InitializeByConsoleFast() // Almost no asking
 		AGGSetup();
 	}
 
+	int load;
+#ifdef _2D
 	stringstream ss;
 	ss << "Load" << (unsigned)situation.numberOfStates << ".png";
-	cout << "Pro nacteni z " << ss.str() <<" zadejte 1: ";
-	int load;
+	cout << "Pro nacteni z " << ss.str() << " zadejte 1: ";
 	cin >> load;
+#endif // _2D
+#ifdef _3D
+	load = 0;
+#endif // _3D
+
 	if (load == 1)
 	{
 		LoadLatticeFromFile(ss.str(), situation.numberOfStates);
